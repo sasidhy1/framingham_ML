@@ -55,6 +55,15 @@ history = model.fit(
     verbose=2
 )
 
+#%%
+import json
+with open('history_stroke.json', 'w') as f:
+    json.dump(history, f)
+
+import json
+# with open('history_stroke.json', 'r') as f:
+        # history = json.load(f)  
+
 #%% view training/testing accuracy, should be similar to avoid overfitting
 model_loss, model_accuracy = model.evaluate(
     X_train_scaled, y_train, verbose=2)
@@ -97,9 +106,13 @@ predictions = model.predict_classes(X_test_scaled)
 test_df = pd.DataFrame({'predicted':np.ravel(predictions),'actual':np.ravel(y_test)})
 pred_count(test_df)
 
+#%%
+from keras.models import load_model
+model = load_model("../models/[13-14-7-1]_1000e_1b.h5")
+
 #%% create a sample "good" patient, not from data
-pt = {'SEX':[0],'AGE':[50],'CIGPDAY':[0],'HEARTRTE':[90],'SYSBP':[120],
-     'BPMEDS':[0],'TOTCHOL':[160],'BMI':[26.5],'GLUCOSE':[95],'DIABETES':[0],
+pt = {'SEX':[0],'AGE':[50],'CIGPDAY':[0],'HEARTRTE':[85],'SYSBP':[120],
+     'BPMEDS':[0],'TOTCHOL':[160],'BMI':[25],'GLUCOSE':[70],'DIABETES':[1],
      'EDUC_2.0':[0],'EDUC_3.0':[0],'EDUC_4.0':[1]}
 good_patient = pd.DataFrame(pt)
 
@@ -107,7 +120,9 @@ good_patient = pd.DataFrame(pt)
 model.predict_proba(good_patient)
 
 #%% create a sample "bad" patient, not from data
-pt = {'SEX':[1],'AGE':[80],'CIGPDAY':[10],'HEARTRTE':[90],'SYSBP':[120],'BPMEDS':[1],'TOTCHOL':[160],'BMI':[30],'GLUCOSE':[95],'DIABETES':[1],'EDUC_2.0':[0],'EDUC_3.0':[0],'EDUC_4.0':[1]}
+pt = {'SEX':[1],'AGE':[75],'CIGPDAY':[5],'HEARTRTE':[68],'SYSBP':[180],
+     'BPMEDS':[0],'TOTCHOL':[210],'BMI':[25],'GLUCOSE':[70],'DIABETES':[0],
+     'EDUC_2.0':[0],'EDUC_3.0':[0],'EDUC_4.0':[0]}
 bad_patient = pd.DataFrame(pt)
 
 # return probability of response (stroke)
