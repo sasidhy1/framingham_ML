@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Home Reassurance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- Boostrap Stylesheet
+  <link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen">-->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            <!--<img class="nav-ufo" src="static/images/world.jpeg">-->
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="col-xs-9 phone-nav">
+            <a class="navbar-brand" href="index.html" id="logo">Home</a>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">About <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="visualizations/temp.html">Max Temperature</a></li>
+                <li><a href="visualizations/humidity.html">Humidity</a></li>
+                <li><a href="visualizations/cloudiness.html">Cloudiness</a></li>
+                <li><a href="visualizations/wind.html">Wind Speed</a></li>
+              </ul>
+            </li>
+            <li><a href="states.html">Where in the World...</a></li>
+            <li><a href="compare.html">Let's Compare</a></li>
+            <li><a href="charting.html">Another View</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>Where Should I Live?</h1>
+      <p>History Shall Determine Your Fate. <br> Please select a menu option from the top to use different plots to
+        help you determine where to live.</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <!--<div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Select a Year</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="2017">
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>-->
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+  <!-- Insert scripts to be used in project-->
+  <!--<script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>-->
+
+</body>
+
+</html>

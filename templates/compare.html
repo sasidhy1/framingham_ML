@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Financial Plot</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- <div class="wrapper"> -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <!--<img class="nav-ufo" src="static/images/world.jpeg">-->
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="col-xs-9 phone-nav">
+            <a class="navbar-brand" href="/" id="logo">Home</a>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+            <li><a href="/writeup/codeapproach">About</a></li>
+            <li><a href="/charting">Current Year Housing Averages</a></li>
+            <li><a href="/states">Where in the World...</a></li>
+            <li><a href="/multiplot">Let's Compare</a></li>
+            <li><a href="/compare">Let's Compare Again</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div>
+    </nav>
+  <!-- </div> -->
+
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="stateInput">state</label>
+      <select class="form-control" id="stateInput" placeholder="Enter a state"></select>
+    </div>
+    <button id="submit" type="submit" class="btn btn-default">Plot state</button>
+  </form>
+  <div id="plot"></div>
+  <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+  <!-- <script src="plots.js"></script> -->
+</body>
+
+</html>

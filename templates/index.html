@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="form-style-5">
+    <form onSubmit="return myFunction(this);" method="POST">
+      <!-- <form> -->
+      <fieldset>
+        <legend><span class="number">1</span> Tell Us About Yourself</legend>
+        <select id="gender" name="field1">
+          <option value="" disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <input id="age" type="age" name="field2" placeholder="Your Age *">
+        <input id="cigs" type="cigs" name="field3" placeholder="Cigarettes Per Day *">
+        <input id="sys" type="sys" name="field4" placeholder="Systolic Number *">
+        <select id="bpmeds" name="field5">
+          <option value="" disabled selected>Do you take blood pressure medication?</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <select id="education" name="field6">
+          <option value="" disabled selected>Level of Education</option>
+          <option value="elemen">0 - 11 Years</option>
+          <option value="highschool">High School Diploma, GED</option>
+          <option value="somecol">Some College, Vocational School</option>
+          <option value="college">College (BS, BA) degree or more</option>
+        </select>
+        <input id="bmi" type="bmi" name="field7" placeholder="BMI *">
+        <input id="HR" type="HR" name="field8" placeholder="Heart Rate *">
+        <input id="Glucose" type="Glucose" name="field9" placeholder="Glucose Level *">
+        <input id="TotCholes" type="TotCholes" name="field10" placeholder="Total Cholesterol *">
+        <select id="Diabetes" name="field11">
+            <option value="" disabled selected>Do you have Diabetes?</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+      </fieldset>
+      <input id="myPopup" onClick="myFunction();" type="submit" value="Evaluate Heart Conditions" />
+      <!-- <input id="myPopup" type="submit" value="Evaluate Heart Conditions" /> -->
+      <input id="myPopup" onclick="myFunction();" type="submit" value="Diabetes" />
+
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Insert scripts to be used in project-->
+  <script src="static/js/app.js"></script>
+
+</body>
+
+</html>
