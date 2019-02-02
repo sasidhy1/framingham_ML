@@ -1,17 +1,20 @@
 import pandas as pd
 import json
-from flask import Flask, render_template, abort, jsonify, request,redirect, json
+from flask import Flask, render_template, url_for, jsonify, request, redirect, json
 import numpy as np
 import sys
 import keras
 from keras.models import load_model
+import tensorflow as tf
 
 
 app = Flask(__name__)
 
 # Model Holders
 model = None
-graph = None
+
+stroke_model = load_model("[13-14-7-1]_1000e_1b.h5")
+graph = tf.get_default_graph()
 
 
 #################################################
@@ -21,10 +24,10 @@ graph = None
 # https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html
 
 
-# @app.route("/")
-# def index():
-#     """Return the homepage for health input."""
-#     return render_template("index.html")
+@app.route("/")
+def index():
+    """Return the homepage for health input."""
+    return render_template("index.html")
 
 
 @app.route("/about")
@@ -33,30 +36,72 @@ def about():
     return render_template("about.html")
 
 
-@app.route('/')
+@app.route('/testing',  methods=['POST'])
 def test_model_prediction():
-    model = load_model("[13-14-7-1]_1000e_1b.h5")
+
     # data = json.loads(request.data)
-    # for k, v in data.items():
-    #     print("This is the key: " + k )
-    #     print("This is the value: " + str(v))
+    gender = request.form['field1']
+    age = request.form['field2']
+    cigsperday = request.form['field3']
+    systolic = request.form['field4']
+    bpmeds = request.form['field5']
+    education = request.form['field6']
+    bmi = request.form['field7']
+    heartrate = request.form['field8']
+    glucose = request.form['field9']
+    cholesterol = request.form['field10']
+    diabetes = request.form['field11']
 
-    pt = {'SEX':[0],'AGE':[50],'CIGPDAY':[0],'HEARTRTE':[85],'SYSBP':[120],'BPMEDS':[0],'TOTCHOL':[160],'BMI':[25],'GLUCOSE':[70],'DIABETES':[1],'EDUC_2.0':[0],'EDUC_3.0':[0],'EDUC_4.0':[1]}
-    good_patient = pd.DataFrame(pt)
-    predicted = model.predict_proba(good_patient)
+    if gender == 'male':
+        sex = 0
+    else:
+        sex = 1
+
+    if bpmeds == 'no':
+        bp = 0
+    else:
+        bp = 1
+
+    if diabetes == 'no':
+        dia = 0
+    else:
+        dia = 1
+
+    if education == "elemen":
+        EDUC_2 = 0
+        EDUC_3 = 0
+        EDUC_4 = 0
+    elif education == "highschool":
+        EDUC_2 = 1
+        EDUC_3 = 0
+        EDUC_4 = 0
+    elif education == "somecol":
+        EDUC_2 = 0
+        EDUC_3 = 1
+        EDUC_4 = 0
+    else:
+        EDUC_2 = 0
+        EDUC_3 = 0
+        EDUC_4 = 1
+
+    global graph
+    with graph.as_default():
+        pt = {'SEX':[sex],'AGE':[age],'CIGPDAY':[cigsperday],'HEARTRTE':[heartrate],'SYSBP':[systolic],'BPMEDS':[bp],'TOTCHOL':[cholesterol],'BMI':[bmi],'GLUCOSE':[glucose],'DIABETES':[dia],'EDUC_2.0':[EDUC_2],'EDUC_3.0':[EDUC_3],'EDUC_4.0':[EDUC_4]}
+        good_patient = pd.DataFrame(pt)
+
+        # Use the model to make a prediction
+        results = stroke_model.predict_proba(good_patient)[0,0]
     
-    
-    # Use the model to make a prediction
-    # predicted_results = model.predict_proba(data)
-    print(predicted)
+    print(results)
 
-    return "Done"
+    # return f"Risk of stroke: {results}<br><a href='/'>resulsforheart</a>"
+    return redirect(url_for('resultsforheart', stroke=results))
 
 
-@app.route("/resultsforheart")
-def resultsforheart():
+@app.route("/resultsforheart/<stroke>")
+def resultsforheart(stroke):
     """Return the predictions of heart conditions."""
-    return render_template("resultsforheart.html")
+    return render_template("results.html", stroke=stroke)
 
 
 @app.route("/diabetes")

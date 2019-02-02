@@ -1,4 +1,3 @@
-<style type="text/css">
 .form-style-5{
 	max-width: 400px;
 	padding: 10px 20px;
@@ -101,58 +100,28 @@
 	background: #109177;
 }
 
-/* Popup container */
-.popup {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-  }
-  
-  /* The actual popup (appears on top) */
-  .popup .popuptext {
-	visibility: hidden;
-	width: 160px;
-	background-color: #555;
-	color: #fff;
-	text-align: center;
-	border-radius: 6px;
-	padding: 8px 0;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -80px;
-  }
-  
-  /* Popup arrow */
-  .popup .popuptext::after {
+
+* {
+box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 33.33%;
+	/* padding: 10px; */
+}
+
+/* Clear floats after the columns */
+.row:after {
 	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #555 transparent transparent transparent;
-  }
-  
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
-	visibility: visible;
-	-webkit-animation: fadeIn 1s;
-	animation: fadeIn 1s
-  }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-	from {opacity: 0;} 
-	to {opacity: 1;}
-  }
-  
-  @keyframes fadeIn {
-	from {opacity: 0;}
-	to {opacity:1 ;}
-  }
+	display: table;
+	clear: both;
+}
 
-
-</style>
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.column {
+	width: 100%;
+}
+  }

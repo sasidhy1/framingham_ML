@@ -41,15 +41,16 @@ function myFunction() {
     EDUC_4 = 1;
   }
 
-  $.ajax({
-    type: "POST",
-    url: '/testing',
-    data: JSON.stringify({ SEX: sex,  AGE: age , CIGPDAY: cigsperday , HEARTRTE: heartrate , SYSBP: systolic , BPMEDS: bpmeds , TOTCHOL: cholesterol , BMI: bmi ,  GLUCOSE: glucose , DIABETES: diabetes , EDUC_2: EDUC_2 , EDUC_3: EDUC_3 , EDUC_4: EDUC_4 }),
-    contentType: 'application/json',
-    success: function (response) {
-      $("#results").text(response.results);
-    },
-  });
+  // $.ajax({
+  //   type: "POST",
+  //   url: '/testing',
+  //   // data: { SEX: sex,  AGE: age , CIGPDAY: cigsperday , HEARTRTE: heartrate , SYSBP: systolic , BPMEDS: bpmeds , TOTCHOL: cholesterol , BMI: bmi ,  GLUCOSE: glucose , DIABETES: diabetes , EDUC_2: EDUC_2 , EDUC_3: EDUC_3 , EDUC_4: EDUC_4 },
+  //   data: {SEX: sex},
+  //   contentType: 'application/json',
+  //   success: function (response) {
+  //     $("#results").text(response.results);
+  //   },
+  // });
 
 }
 

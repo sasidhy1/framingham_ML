@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="static/css/style2.css">
+  <style>
+    * {
+	box-sizing: border-box;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	.column {
+		float: left;
+		width: 33.33%;
+		/* padding: 10px; */
+	}
+	
+	/* Clear floats after the columns */
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+  }
+  
+  p {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+	
+	/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+    }
+    </style>
+</head>
+
+<body>
+  <h2>Your Predicted Results</h2>
+  <p>The following are your risk predictors based on the details you provided on the previous screen</p>
+  <div class="row">
+    <div class="column" style="background-color:#aaa;">
+      <h2>Stroke</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column" style="background-color:#bbb;">
+      <h2>Angina</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column" style="background-color:#ccc;">
+      <h2>CVD</h2>
+      <p>Some text..</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Insert scripts to be used in project-->
+  <script src="static/js/app.js"></script>
+
+</body>
+
+</html>
