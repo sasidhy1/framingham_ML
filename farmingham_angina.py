@@ -131,14 +131,14 @@ best_accuracy = grid_search.best_score_
 pt_bad = {'SEX':[1],'AGE':[90], 'TOTCHOL':[500],'BMI':[60],'HEARTRTE':[150],'SYSBP':[330]}
 bad_patient = pd.DataFrame(pt_bad)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(bad_patient)
 
 
 pt_good = {'SEX':[0],'AGE':[20], 'TOTCHOL':[100],'BMI':[18],'HEARTRTE':[60],'SYSBP':[80]}
 good_patient = pd.DataFrame(pt_good)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(good_patient)
 
 ##################### 1 hidden layer with 2 nodes, 100 
@@ -146,16 +146,18 @@ classifier.predict_proba(good_patient)
 pt_bad = {'SEX':[1],'AGE':[90], 'TOTCHOL':[500],'BMI':[60],'HEARTRTE':[150],'SYSBP':[330]}
 bad_patient = pd.DataFrame(pt_bad)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(bad_patient)
 Out[108]: array([[0.34387156]], dtype=float32)
 
 pt_good = {'SEX':[0],'AGE':[20], 'TOTCHOL':[100],'BMI':[18],'HEARTRTE':[60],'SYSBP':[80]}
 good_patient = pd.DataFrame(pt_good)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(good_patient)
 Out[109]: array([[0.04523359]], dtype=float32)
+
+################# predictive outcomes seem more comparable with a difference of close to 30%.
 
 
 ##################### 1 hidden layer with 2 nodes, epochs = 50
@@ -163,14 +165,14 @@ Out[109]: array([[0.04523359]], dtype=float32)
 pt_bad = {'SEX':[1],'AGE':[90], 'TOTCHOL':[500],'BMI':[60],'HEARTRTE':[150],'SYSBP':[330]}
 bad_patient = pd.DataFrame(pt_bad)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(bad_patient)
 Out[114]: array([[0.3238456]], dtype=float32)
 
 pt_good = {'SEX':[0],'AGE':[20], 'TOTCHOL':[100],'BMI':[18],'HEARTRTE':[60],'SYSBP':[80]}
 good_patient = pd.DataFrame(pt_good)
 
-# return probability of response (cvd)
+# return probability of response (angina)
 classifier.predict_proba(good_patient)
 Out[115]: array([[0.3238456]], dtype=float32)
 ################   predictive power is not sensitive
