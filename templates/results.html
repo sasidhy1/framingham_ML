@@ -46,20 +46,45 @@
 <body>
   <h2>Your Predicted Results</h2>
   <p>The following are your risk predictors based on the details you provided on the previous screen</p>
+  <p>using neural network models. </p>
   <div class="row">
-    <div class="column" style="background-color:#aaa;">
+    <div id="nnstroke" class="column" style="background-color:#aaa;">
       <h2>Stroke</h2>
-      <p>Some text..</p>
+      <p>Your chances of having a stroke is {{stroke}}</p>
     </div>
-    <div class="column" style="background-color:#bbb;">
+    <div id="nnangina" class="column" style="background-color:#bbb;">
       <h2>Angina</h2>
-      <p>Some text..</p>
+      <p>Your chances of having angina is {{angina}}</p>
     </div>
-    <div class="column" style="background-color:#ccc;">
+    <div id="nncvd" class="column" style="background-color:#ccc;">
       <h2>CVD</h2>
-      <p>Some text..</p>
+      <p>Your chances of having CVD is {{cvd}}</p>
     </div>
   </div>
+
+
+  <p>The following are your risk predictors based on the details you provided on the previous screen</p>
+  <p>using regression models. </p>
+  <div class="row">
+    <div id="regdiabetes" class="column" style="background-color:#aaa;">
+      <h2>Diabetes</h2>
+      <p>Your chances of having a diabetes is {{diabetes}}</p>
+    </div>
+    <div id="regstroke" class="column" style="background-color:#aaa;">
+      <h2>Stroke</h2>
+      <p>Your chances of having a stroke is {{regstroke}}</p>
+    </div>
+    <div id="nnangina" class="column" style="background-color:#bbb;">
+      <h2>Angina</h2>
+      <p>Your chances of having angina is {{regangina}}</p>
+    </div>
+    <div id="nncvd" class="column" style="background-color:#ccc;">
+      <h2>CVD</h2>
+      <p>Your changes of having CVD {{regcvd}}</p>
+    </div>
+  </div>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
