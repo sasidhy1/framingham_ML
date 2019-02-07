@@ -3,6 +3,8 @@ A repository to store progress on ML project, compiled by Matt Lombardo, John Mi
 
 This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://hidden-island-65494.herokuapp.com).
 
+Additional data visualization is hosted on Tableau Public [viewable here](https://public.tableau.com/profile/jt7327#!/vizhome/Project3Dashboard_2/Dashboard1).
+
 Available models: (scaled data indicated)
 <p align="center">
   <img src="https://github.com/sasidhy1/framingham_ML/blob/master/images/model_diagram.svg" alt="Process Diagram"/>
@@ -10,21 +12,33 @@ Available models: (scaled data indicated)
 
 ## Repo Contents:
 * PPT slides
-* **calculator_app/**
+* **application/**
     * (1) Flask application
-    * (2) HTML templates
-    * (1) static CSS sheet
-    * (1) static JS script
+    * (1) Procfile
+    * (1) requirements.txt
+    * **templates/**
+      * (1) index.html
+      * (1) results.html
+    * **static/**
+      * (1) style.css
+      * (1) app.js
+* **etl/**
+    * (1) data cleanup jupyter ntbk
+    * (1) CSV of reduced data
+    * (2) python scripts
+      * create feature scalers
+      * convert .joblib -> .pkl
 * **models/**
     * (1) TXT w/ R regression models (angina/CVD/stroke/diabetes)
     * (3) ANN KERAS models (angina/CVD/stroke)
     * (3) SVM SKLEARN models (angina/CVD/stroke)
     * (3) RF SKLEARN models (angina/CVD/stroke)
-    * (13) StandardScaler SKLEARN models (per feature)
+    * **scalers/**
+      * (13) StandardScaler SKLEARN models (per feature)
 * **training/**
-    * (1) ETL jupyter ntbk
     * (1) ANN jupyter ntbk (CVD)
-    * (2) ANN python scripts (angina/stroke)
-    * (1) RF python script (angina/CVD/stroke)
-    * (1) SVM python script (angina/CVD/stroke)
-    * (1) R regression script (angina/CVD/stroke/diabetes)
+    * (4) python scripts
+      * (2) ANN scripts (angina/stroke)
+      * (1) RF script (angina/CVD/stroke)
+      * (1) SVM script (angina/CVD/stroke)
+    * (1) regression R script (angina/CVD/stroke/diabetes)
