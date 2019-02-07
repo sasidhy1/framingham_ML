@@ -3,7 +3,12 @@ A repository to store progress on ML project, compiled by Matt Lombardo, John Mi
 
 This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://hidden-island-65494.herokuapp.com).
 
-Repo Contents:
+Available models: (scaled data indicated)
+<p align="center">
+  <img src="https://github.com/sasidhy1/framingham_ML/blob/master/images/model_diagram.svg" alt="Process Diagram"/>
+</p>
+
+## Repo Contents:
 * PPT slides
 * **calculator_app/**
     * (1) Flask application
@@ -16,13 +21,9 @@ Repo Contents:
     * (3) SVM SKLEARN models (angina/CVD/stroke)
     * (3) RF SKLEARN models (angina/CVD/stroke)
     * (13) StandardScaler SKLEARN models (per feature)
-* **work/**
+* **training/**
     * (1) jupyter notebook file (CVD)
     * (2) ANN python scripts (angina/stroke)
     * (1) RF python script (angina/CVD/stroke)
     * (1) SVM python script (angina/CVD/stroke)
     * (1) R regression script (angina/CVD/stroke/diabetes)
-    
-    
-
-![alt text](https://github.com/sasidhy1/framingham_ML/blob/master/images/model_diagram.svg "Process Diagram")
