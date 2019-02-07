@@ -1,5 +1,18 @@
+.bg {
+	/* The image used */
+	background-image: url(/static/images/Edited_Health_Background.jpg);
+  
+	/* Full height */
+	height: 100%; 
+  
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
 .form-style-5{
-	max-width: 400px;
+	max-width: 600px;
 	padding: 10px 20px;
 	background: #f4f7f8;
 	/* margin: 10px auto; */
@@ -38,7 +51,7 @@
 	margin: auto;
 	outline: 0;
 	padding: 10px;
-	width: 50%;
+	width: 100%;
 	box-sizing: border-box; 
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
@@ -112,6 +125,11 @@ box-sizing: border-box;
 	/* padding: 10px; */
 }
 
+.column2 {
+	float: left;
+	width: 24%;
+	/* padding: 10px; */
+}
 /* Clear floats after the columns */
 .row:after {
 	content: "";

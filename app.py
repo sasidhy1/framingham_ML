@@ -135,6 +135,14 @@ def test_model_prediction():
     print(cvd_results)
     print(angina_results)
 
+    stroke_results = 100 * stroke_results
+    cvd_results = 100 * cvd_results
+    angina_results = 100 * angina_results
+
+    stroke_results = "{0:.4f}%".format(stroke_results)
+    cvd_results = "{0:.4f}%".format(cvd_results)
+    angina_results = "{0:.4f}%".format(angina_results)
+
     # Regression Model Results
     reg_diabetes = -14.162026063 + ( 0.058979722 * float(age)) + ( 0.058252121 * float(bmi) ) + (0.051667194 * float(glucose)) + (0.009398841 * float(systolic)) - (0.379299003 * float(sex))
     reg_stroke = -7.918387257 + (0.057798562 * float(age)) + (0.012255363 * float(cigsperday)) - (0.002613120 * float(cholesterol)) + (0.023016992 * float(bmi)) - (0.005584217 * float(heartrate)) + ( 0.020128967 * float(systolic)) - ( 0.149489784 * float(sex))
@@ -145,6 +153,11 @@ def test_model_prediction():
     final_stroke = 100 * (np.exp(reg_stroke) / (1 + np.exp(reg_stroke)))
     final_angina = 100 * (np.exp(reg_angina) / (1 + np.exp(reg_angina)))
     final_cvd = 100 * (np.exp(reg_cvd) / (1 + np.exp(reg_cvd)))
+
+    final_diabetes = "{0:.4f}%".format(final_diabetes)
+    final_stroke = "{0:.4f}%".format(final_stroke)
+    final_angina = "{0:.4f}%".format(final_angina)
+    final_cvd = "{0:.4f}%".format(final_cvd)
 
     print(reg_diabetes)
     print(reg_stroke)
