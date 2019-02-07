@@ -22,7 +22,8 @@ Available models: (scaled data indicated)
     * (3) RF SKLEARN models (angina/CVD/stroke)
     * (13) StandardScaler SKLEARN models (per feature)
 * **training/**
-    * (1) jupyter notebook file (CVD)
+    * (1) ETL jupyter ntbk
+    * (1) ANN jupyter ntbk (CVD)
     * (2) ANN python scripts (angina/stroke)
     * (1) RF python script (angina/CVD/stroke)
     * (1) SVM python script (angina/CVD/stroke)
