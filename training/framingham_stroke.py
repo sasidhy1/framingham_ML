@@ -134,6 +134,7 @@ def scale_features(pt):
             
     return scaled_pt
 
+# create a sample "good" patient, not from data
 pt = {'SEX':[1],'AGE':[50],'CIGPDAY':[0],'HEARTRTE':[100],'SYSBP':[130],
      'BPMEDS':[1],'TOTCHOL':[240],'BMI':[25],'GLUCOSE':[100],'DIABETES':[0],
      'EDUC_2.0':[0],'EDUC_3.0':[1],'EDUC_4.0':[0]}
@@ -141,7 +142,6 @@ pt = {'SEX':[1],'AGE':[50],'CIGPDAY':[0],'HEARTRTE':[100],'SYSBP':[130],
 pt = reduce_pt(pt,data)
 pt_scaled = scale_features(pt)
 good_patient = pd.DataFrame(pt_scaled)
-
 model.predict_proba(good_patient)[0,0]
 
 # create a sample "bad" patient, not from data
@@ -152,6 +152,4 @@ pt = {'SEX':[1],'AGE':[65],'CIGPDAY':[90],'HEARTRTE':[200],'SYSBP':[135],
 pt = reduce_pt(pt,data)
 pt_scaled = scale_features(pt)
 bad_patient = pd.DataFrame(pt_scaled)
- 
-# return probability of response (stroke)
 model.predict_proba(bad_patient)[0,0]
