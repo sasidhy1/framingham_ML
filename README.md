@@ -20,8 +20,9 @@ Available models: (scaled data indicated)
       * (1) index.html
       * (1) results.html
     * **static/**
-      * (1) style.css
-      * (1) app.js
+      * (2) CSS stylesheets
+      * (1) JS script
+      * (1) JPG image
 * **etl/**
     * (1) data cleanup jupyter ntbk
     * (1) CSV of reduced data
