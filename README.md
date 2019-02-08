@@ -1,9 +1,11 @@
 # framingham_ML
 A repository to store progress on ML project, compiled by Matt Lombardo, John Michals, Kenneth Reed, Yamini Sasidhar, Khrystyne Vaughan, Fardi Yeung.
 
-This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://framingham-ml-20186.herokuapp.com).
+This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://framingham-ml-20186.herokuapp.com). It uses both ANNs and logistic regression to calculate a user's risk index for each disease.
 
-Additional data visualization is hosted on Tableau Public [viewable here](https://public.tableau.com/profile/jt7327#!/vizhome/Project3Dashboard_2/Dashboard1).
+> A bare calculator with additional SVM and RF models has also been deployed to Heroku [viewable here](https://hidden-island-65494.herokuapp.com).
+
+> Additional data visualization is hosted on Tableau Public [viewable here](https://public.tableau.com/profile/jt7327#!/vizhome/Project3Dashboard_2/Dashboard1).
 
 Available models: (scaled data indicated)
 <p align="center">
