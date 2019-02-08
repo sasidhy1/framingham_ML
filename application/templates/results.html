@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="../static/css/style2.css">
+
+  <style>
+    * {
+	box-sizing: border-box;
+	}
+	
+	/* Create three equal columns that floats next to each other */
+	.column {
+		float: left;
+    width: 33.33%;
+    padding: 10px;
+  }
+  
+  .column2 {
+	float: left;
+  width: 25%;
+  padding: 10px;
+  }
+	
+	/* Clear floats after the columns */
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+  }
+  
+  p {
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .shadow {box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+  .top-buffer { margin-top:200px; }
+
+  .bg {
+	/* The image used */
+	background-image: url(/static/images/Edited_Health_Background.jpg);
+  
+	/* Full height */
+	height: 100%; 
+  
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+  }
+	
+	/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+    }
+  </style>
+</head>
+
+<body class="bg">
+  <h1 style="color: #1abc9c;">Your Predicted Results</h1>
+  <h2>The following are your risk predictors based on the details you provided using Neural Network models. </h2>
+  <div class="row">
+    <div id="nnstroke" class="column shadow " style="background-color:#2fb197;">
+      <h2>Stroke</h2>
+      <p>Your chances of having a stroke is <strong> {{stroke}} </strong></p>
+    </div>
+    <div id="nnangina" class="column shadow" style="background-color:#1aa388;">
+      <h2>Angina</h2>
+      <p>Your chances of having angina is <strong> {{angina}} </strong> </p>
+    </div>
+    <div id="nncvd" class="column shadow" style="background-color:#2fb197;">
+      <h2>CVD</h2>
+      <p>Your chances of having CVD is <strong> {{cvd}} </strong></p>
+    </div>
+  </div>
+
+
+  <h2 class="top-buffer">The following are your risk predictors based on the details you provided using Logistic Regression models. </h2>
+  <div class="row ">
+    <div id="regdiabetes" class="column2 shadow" style="background-color:#2fb197;">
+      <h2>Diabetes</h2>
+      <p>Your chances of having a diabetes is <strong>{{diabetes}}</strong> </p>
+    </div>
+    <div id="regstroke" class="column2 shadow" style="background-color:#1aa388;">
+      <h2>Stroke</h2>
+      <p>Your chances of having a stroke is <strong>{{regstroke}}</strong></p>
+    </div>
+    <div id="nnangina" class="column2 shadow" style="background-color:#2fb197;">
+      <h2>Angina</h2>
+      <p>Your chances of having angina is <strong>{{regangina}}</strong></p>
+    </div>
+    <div id="nncvd" class="column2 shadow" style="background-color:#1aa388;">
+      <h2>CVD</h2>
+      <p>Your chances of having CVD <strong>{{regcvd}}</strong></p>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Insert scripts to be used in project-->
+  <script src="static/js/app.js"></script>
+
+</body>
+
+</html>
