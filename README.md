@@ -1,7 +1,7 @@
 # framingham_ML
 A repository to store progress on ML project, compiled by Matt Lombardo, John Michals, Kenneth Reed, Yamini Sasidhar, Khrystyne Vaughan, Fardi Yeung.
 
-This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://hidden-island-65494.herokuapp.com).
+This Framingham Risk Calculator has been deployed to Heroku as a Flask app [viewable here](https://framingham-ml-20186.herokuapp.com).
 
 Additional data visualization is hosted on Tableau Public [viewable here](https://public.tableau.com/profile/jt7327#!/vizhome/Project3Dashboard_2/Dashboard1).
 
